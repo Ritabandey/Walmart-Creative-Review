@@ -1,0 +1,13 @@
+{
+  "allowedFormats": ["png", "jpg", "jpeg", "svg"],
+  "maxWidth": 5000,
+  "maxHeight": 5000,
+  "brandColors": [
+    "#0053E2",  
+    "#1A7FC1",
+    "#FFFFFF"
+  ],
+  "colorTolerance": 60,
+  "minLogoSizePx": 40,
+  "minLogoClearancePct": 5
+}

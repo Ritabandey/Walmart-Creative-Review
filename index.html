@@ -1,22 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Walmart AI Brand Checker</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brand Compliance Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
-      body { font-family: Arial; max-width: 600px; margin: 40px auto; }
-      .box { padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
-      .result { margin-top: 20px; white-space: pre-wrap; }
+    /* small fallback in-case styles.css isn't loaded quickly */
+    body { font-family: Arial, Helvetica, sans-serif; }
   </style>
 </head>
 <body>
-  <h2>Walmart Brand Compliance Checker</h2>
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/logo-placeholder.svg" alt="Brand logo" class="logo" />
+      <div class="brand-text">
+        <div class="title">Brand Compliance Checker</div>
+        <div class="subtitle">Quick checks for icons, illustrations and PDFs</div>
+      </div>
+    </div>
+    <div class="user-area">Internal • Demo</div>
+  </header>
 
-  <div class="box">
-      <input type="file" id="imageUpload" accept="image/*" />
-      <button onclick="runCheck()">Run Brand Check</button>
-  </div>
+  <main class="container">
+    <section class="panel upload-panel">
+      <h3>Upload Asset</h3>
+      <label for="assetType" class="label">Asset type</label>
+      <select id="assetType" class="select">
+        <option value="illustration" selected>Illustration</option>
+        <option value="icon">Icon</option>
+        <option value="pdf">PDF</option>
+      </select>
 
-  <div class="result" id="output"></div>
+      <label for="imageUpload" class="label">Choose file</label>
+      <div id="dropZone" class="drop-zone">
+        <input type="file" id="imageUpload" accept="image/*,application/pdf" class="file-input" />
+        <div class="drop-hint">Drag & drop here, or click to browse</div>
+      </div>
+
+      <div class="progress-wrap" aria-hidden="true">
+        <div class="progress-bar" id="uploadProgress" style="width:0%"></div>
+      </div>
+
+      <div class="actions">
+        <button id="runCheck" class="btn primary">Run Brand Check</button>
+        <button id="clearBtn" class="btn">Clear</button>
+      </div>
+
+      <div class="hint">Tip: replace the placeholder logo in <code>/assets/logo-placeholder.svg</code> with your official logo from the brand center.</div>
+    </section>
+
+    <section class="panel results-panel">
+      <h3>Report</h3>
+      <div id="output" class="report">
+        <div class="empty">No report yet — upload an asset and click <strong>Run Brand Check</strong>.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">Made for internal use • Do not upload sensitive assets to external services</footer>
 
   <script src="script.js"></script>
 </body>

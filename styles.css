@@ -1,0 +1,45 @@
+:root{
+  --walmart-blue:#0053E2;
+  --walmart-mid:#1A7FC1;
+  --walmart-dark:#064a82;
+  --bg:#f4f6f8;
+  --card:#ffffff;
+  --muted:#667085;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font-family:Inter,Segoe UI,Helvetica,Arial;color:#042a3b}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;background:linear-gradient(90deg,var(--walmart-blue),var(--walmart-mid));color:white}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{height:44px;width:auto;border-radius:6px;background:rgba(255,255,255,0.06);padding:6px}
+.brand-text .title{font-weight:700}
+.brand-text .subtitle{font-size:12px;opacity:0.95}
+.user-area{font-size:13px;opacity:0.95}
+.container{display:grid;grid-template-columns:360px 1fr;gap:20px;padding:28px}
+.panel{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(7,20,40,0.06)}
+.upload-panel h3,.results-panel h3{margin-top:0}
+.label{display:block;margin:12px 0 6px;color:var(--muted);font-size:13px}
+.select,.file-input{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ee;background:#fff}
+.drop-zone{position:relative;border:2px dashed rgba(6,113,206,0.12);padding:18px;border-radius:10px;display:flex;align-items:center;justify-content:center;min-height:84px;cursor:pointer;transition:all .18s ease}
+.drop-zone.dragover{background:linear-gradient(180deg,rgba(7,113,206,0.04),rgba(26,127,193,0.02));box-shadow:0 6px 18px rgba(6,113,206,0.06);transform:translateY(-2px)}
+.drop-zone .drop-hint{color:var(--muted);font-size:13px}
+.actions{margin-top:14px;display:flex;gap:10px}
+.btn{padding:10px 14px;border-radius:8px;border:1px solid #d0d7e2;background:white;cursor:pointer}
+.btn.primary{background:var(--walmart-blue);color:white;border-color:var(--walmart-blue);box-shadow:0 6px 18px rgba(6,113,206,0.18)}
+.hint{margin-top:12px;font-size:12px;color:var(--muted)}
+.results-panel .report{min-height:280px;padding:6px}
+.report .empty{color:var(--muted)}
+.progress-wrap{height:8px;background:#eef4fb;border-radius:999px;margin-top:10px;overflow:hidden}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--walmart-mid),var(--walmart-blue));transition:width .24s cubic-bezier(.2,.9,.2,1)}
+.check{display:flex;align-items:center;justify-content:space-between;padding:10px;border-radius:10px;margin-bottom:10px;border:1px solid #f0f3f6}
+.check{opacity:0;transform:translateY(8px);transition:all .36s cubic-bezier(.2,.9,.2,1)}
+.check.show{opacity:1;transform:none}
+.check .left{display:flex;gap:12px;align-items:center}
+.badge{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;color:white}
+.badge.pass{background:linear-gradient(180deg,var(--walmart-mid),var(--walmart-blue))}
+.badge.fail{background:#ef4444}
+.check .meta{font-size:13px}
+.check .meta .id{font-weight:700}
+.check .meta .msg{font-size:12px;color:var(--muted)}
+.footer{padding:14px;text-align:center;color:var(--muted);font-size:13px}
+
+@media (max-width:880px){.container{grid-template-columns:1fr;padding:16px}.logo{height:36px}}
