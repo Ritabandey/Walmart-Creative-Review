@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Walmart AI Brand Checker</title>
+  <style>
+      body { font-family: Arial; max-width: 600px; margin: 40px auto; }
+      .box { padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+      .result { margin-top: 20px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h2>Walmart Brand Compliance Checker</h2>
+
+  <div class="box">
+      <input type="file" id="imageUpload" accept="image/*" />
+      <button onclick="runCheck()">Run Brand Check</button>
+  </div>
+
+  <div class="result" id="output"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
