@@ -29,8 +29,8 @@ app.post('/analyze', upload.single('file'), async (req, res) => {
 
   const checks = [];
 
-  // read asset type (icon | illustration | pdf) from form
-  const assetType = (req.body && req.body.assetType) ? String(req.body.assetType).toLowerCase() : '';
+  // read asset type (icon | illustration | pdf) from form fields
+  const assetType = (req.body && req.body.assetType) ? String(req.body.assetType).trim().toLowerCase() : '';
   checks.push({ id: 'assetType', passed: !!assetType, message: assetType ? `Asset type: ${assetType}` : 'Asset type not provided' });
 
   // Apply simple per-type overrides
